@@ -1,0 +1,2 @@
+- [ ] Set up email account
+- [ ] IDEA: Plug Express middleware to get a Let's Encrypt cert and renew it automatically 
