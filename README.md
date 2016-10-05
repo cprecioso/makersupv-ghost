@@ -1,4 +1,5 @@
 1. **USE NODE 4 LTS (`nvm` can help with that)**
+1. `git submodule init` and `git submodule update`
 1. `npm install`
 2. Ensure in the `content` folder there exists these subdirectories: `apps`, `data`, `images`, `themes`
 2. `npm start`
