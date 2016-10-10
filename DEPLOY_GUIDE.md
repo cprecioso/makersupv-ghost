@@ -41,9 +41,8 @@
 
 2. Escribir el Caddyfile (configuración de Caddy) en `/var/www/caddy/Caddyfile`
   ```caddy
-  urldelsitio.com
+  https://urldelsitio.com
 
-  gzip
   tls correo@dealguien.com
   log /var/log/caddy.log
 
