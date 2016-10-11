@@ -47,6 +47,9 @@
   log /var/log/caddy.log
 
   proxy / localhost:2368 {
+    proxy_header Host {host}
+    proxy_header X-Real-IP {remote}
+    proxy_header X-Forwarded-Proto {scheme}
     transparent
   }
   ```
