@@ -41,16 +41,36 @@
 
 2. Escribir el Caddyfile (configuración de Caddy) en `/var/www/caddy/Caddyfile`
   ```caddy
-  https://urldelsitio.com
+  https://web.com {
 
-  tls correo@dealguien.com
-  log /var/log/caddy.log
+    gzip
+    tls correodealguien@servidor.com
+    log /var/log/caddy.log
 
-  proxy / localhost:2368 {
-    proxy_header Host {host}
-    proxy_header X-Real-IP {remote}
-    proxy_header X-Forwarded-Proto {scheme}
-    transparent
+    proxy / localhost:2368 {
+      header_upstream Host {host}
+      header_upstream X-Real-IP {remote}
+      header_upstream X-Forwarded-For {remote}
+      header_upstream X-Forwarded-Proto {scheme}
+      transparent
+    }
+
+  }
+
+  https://www.web.com {
+
+    gzip
+    tls correodealguien@servidor.com
+    log /var/log/caddy.log
+
+    proxy / localhost:2368 {
+      header_upstream Host {host}
+      header_upstream X-Real-IP {remote}
+      header_upstream X-Forwarded-For {remote}
+      header_upstream X-Forwarded-Proto {scheme}
+      transparent
+    }
+
   }
   ```
 
