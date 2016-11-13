@@ -59,17 +59,8 @@
 
   https://www.web.com {
 
-    gzip
     tls correodealguien@servidor.com
-    log /var/log/caddy.log
-
-    proxy / localhost:2368 {
-      header_upstream Host {host}
-      header_upstream X-Real-IP {remote}
-      header_upstream X-Forwarded-For {remote}
-      header_upstream X-Forwarded-Proto {scheme}
-      transparent
-    }
+    redir https://web.com{uri}
 
   }
   ```
