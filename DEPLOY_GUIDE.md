@@ -118,6 +118,7 @@
 
 3. Editar la configuración de Ghost en `/var/www/ghost/config.js`
   Cambiar `config.production.url` de `http://my-ghost-blog.com` a la URL del dominio que toca. **Usa `https://`**, ya que Caddy lo activará por defecto.
+  Añadir el nombre de usuario y contraseña de Mailgun para evitar que el email se bloquee (o si no Outlook/Hotmail lo considera spam).
 
 4. Escribir archivo de inicio systemd en `/etc/systemd/system/ghost.service`
   ```systemd

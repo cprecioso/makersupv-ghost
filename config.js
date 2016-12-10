@@ -11,8 +11,20 @@ config = {
     // When running Ghost in the wild, use the production environment.
     // Configure your URL and mail settings here
     production: {
-        url: 'http://my-ghost-blog.com',
-        mail: {},
+        url: 'https://my-ghost-blog.com',
+
+        // Mail configuration with MailGun to prevent strange things with the emails
+        // Visit http://support.ghost.org/mail for instructions
+        mail: {
+            transport: 'SMTP',
+            options: {
+                service: 'Mailgun',
+                auth: {
+                    user: 'USUARIOMAILGUN', // mailgun username
+                    pass: 'CONTRASEÑAMAILGUN'   // mailgun password
+                }
+            }
+        },
         database: {
             client: 'sqlite3',
             connection: {
@@ -41,21 +53,6 @@ config = {
         // Visit https://www.w3.org/TR/referrer-policy/ for instructions
         // default 'origin-when-cross-origin',
         // referrerPolicy: 'origin-when-cross-origin',
-
-        // Example mail config
-        // Visit http://support.ghost.org/mail for instructions
-        // ```
-        //  mail: {
-        //      transport: 'SMTP',
-        //      options: {
-        //          service: 'Mailgun',
-        //          auth: {
-        //              user: '', // mailgun username
-        //              pass: ''  // mailgun password
-        //          }
-        //      }
-        //  },
-        // ```
 
         // #### Database
         // Ghost supports sqlite3 (default), MySQL & PostgreSQL
