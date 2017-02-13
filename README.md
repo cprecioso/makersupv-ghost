@@ -1,5 +1,5 @@
 # To deploy
-Take a look at [DEPLOY_GUIDE.md]()
+Take a look at [DEPLOY_GUIDE.md](DEPLOY_GUIDE.md)
 
 ---
 
