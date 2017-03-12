@@ -101,11 +101,13 @@
   ```
 
 # Instalar y configurar Ghost
-1. Instalar node y npm
+1. Instalar node y yarn
   ```sh
-  $ curl -sL https://deb.nodesource.com/setup_4.x | bash -
-  $ apt-get install -y nodejs
-  $ npm i -g npm
+  $ curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+  $ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+  $ curl -sL https://deb.nodesource.com/setup_4.x | sudo bash -
+  $ sudo apt-get update
+  $ sudo apt-get install -y nodejs yarn
   ```
 
 2. Instalar ghost
@@ -113,7 +115,7 @@
   $ mkdir -p /var/www/ghost
   $ git clone https://github.com/cprecioso/makersupv-ghost.git /var/www/ghost --recursive --depth 1
   $ cd /var/www/ghost
-  $ npm i --production
+  $ yarn --production
   ```
 
 3. Editar la configuración de Ghost en `/var/www/ghost/config.js`
