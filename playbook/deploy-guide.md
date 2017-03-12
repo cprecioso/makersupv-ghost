@@ -71,7 +71,7 @@
   $ yarn --production
   ```
 
-3. Escribir la configuración de Ghost en `/var/www/ghost/config.js` - [ejemplo](./config-files/config.js)
+3. Escribir la configuración de Ghost en `/var/www/ghost/config.js` - [ejemplo](./config-files/config.js)  
   Cambiar `config.production.url` de `http://my-ghost-blog.com` a la URL del dominio que toca. **Usa `https://`**, ya que Caddy lo activará por defecto.
   Añadir el nombre de usuario y contraseña de Mailgun para evitar que el email se bloquee (o si no Outlook/Hotmail lo considera spam).
 

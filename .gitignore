@@ -5,4 +5,4 @@ content/data/*
 !content/data/.gitkeep
 content/images/*
 !content/images/.gitkeep
-config.js
+/config.js
