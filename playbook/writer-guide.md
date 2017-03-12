@@ -4,7 +4,7 @@
 - Te tienen que invitar a Ghost, si tienes sesión, accede mediante [https://makersupv.com/ghost/](https://makersupv.com/ghost/).
 - Todo funciona de manera intuitiva.
 - Lo único que es diferente es que Ghost usa **Markdown** para escribir los posts. La referencia está en el botón de ayuda en la parte inferior de la pantalla, o [en la ayuda online de Ghost](http://support.ghost.org/markdown-guide/). Si sabes usar la negrita de WhatsApp, ya sabes usar Markdown. También puedes meter HTML si sabes lo que haces.
-- Debes editar las opciones del post para poner la imagen principal del artículo. En las opciones también puedes ver cómo quedará en la web (_Preview_) y marcar el post como destacado si quieres.
+- Debes editar las opciones del post para poner la imagen principal del artículo. En las opciones también puedes ver cómo quedará en la web (_Preview_) y marcar el post como destacado si quieres. Lo mejor es que la imagen sea de 640 x 480px.
 - El post destacado más reciente aparecerá en la cabecera de la web.
 
 ---
@@ -24,7 +24,7 @@ La referencia está en el botón de ayuda en la parte inferior de la pantalla, o
 
 Una vez hayas escrito tu artículo, haz click en el icono de opciones arriba a la derecha. En él puedes configurar la URL que tendrá (cambiar esto una vez publicado el artículo **NO ES NADA RECOMENDABLE**, ya que se romperán los enlaces), editar la fecha del artículo e incluir etiquetas para clasificarlo.
 
-Pero, lo más importante, en las opciones es donde se configura la imagen que tendrá el artículo, dónde puedes indicar si quieres que sea un post destacado, y donde puedes previsualizar como quedará en la web.
+Pero, lo más importante, en las opciones es donde se configura la imagen que tendrá el artículo (recomendado 640 x 480px), dónde puedes indicar si quieres que sea un post destacado, y donde puedes previsualizar como quedará en la web.
 
 Respecto a los posts destacados, en la cabecera de la web se incluye el título del post destacado más reciente.
 
