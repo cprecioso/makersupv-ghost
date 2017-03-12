@@ -1,0 +1,16 @@
+[Unit]
+Description=Caddy webserver
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/caddy --agree
+User=caddy
+Group=caddy
+WorkingDirectory=/var/www/caddy
+LimitNOFILE=8192
+PIDFile=/var/run/caddy/caddy.pid
+Restart=on-failure
+StartLimitInterval=300
+
+[Install]
+WantedBy=multi-user.target

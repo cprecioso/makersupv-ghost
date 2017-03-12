@@ -1,5 +1,7 @@
+> Encontrarás ejemplos de todos los archivos en la carpeta [config-files](./config-files)
+
 # Configuración inicial
-1. Configurar VPS
+1. Configurar VPS (con Ubuntu Server LTS)
 
 2. Configurar dominio
 
@@ -20,16 +22,9 @@
   $ sysctl vm.vfs_cache_pressure=50
   ```
 
-2. Añadir la siguiente línea a `/etc/fstab`
-  ```
-  /swapfile      none            swap    sw                           0 0
-  ```
+2. Añadir el swap a `/etc/fstab` - [ejemplo](./config-files/fstab)
 
-3. Añadir las siguientes líneas a `/etc/sysctl.conf`
-  ```
-  vm.swappiness = 10
-  vm.vfs_cache_pressure = 50
-  ```
+3. Añadir el swap a `/etc/sysctl.conf` - [ejemplo](./config-files/sysctl.conf)
 
 # Instalar y configurar Caddy
 1. Instalar Caddy y dar permisos para el puerto 80 y 443
@@ -39,51 +34,9 @@
   $ mkdir -p /var/www/caddy
   ```
 
-2. Escribir el Caddyfile (configuración de Caddy) en `/var/www/caddy/Caddyfile`
-  ```caddy
-  https://web.com {
+2. Escribir el Caddyfile (configuración de Caddy) en `/var/www/caddy/Caddyfile` - [ejemplo](./config-files/Caddyfile)
 
-    gzip
-    tls correodealguien@servidor.com
-    log /var/log/caddy.log
-
-    proxy / localhost:2368 {
-      header_upstream Host {host}
-      header_upstream X-Real-IP {remote}
-      header_upstream X-Forwarded-For {remote}
-      header_upstream X-Forwarded-Proto {scheme}
-      transparent
-    }
-
-  }
-
-  https://www.web.com {
-
-    tls correodealguien@servidor.com
-    redir https://web.com{uri}
-
-  }
-  ```
-
-3. Escribir archivo de inicio systemd en `/etc/systemd/system/caddy.service`
-  ```systemd
-  [Unit]
-  Description=Caddy webserver
-  After=network.target
-
-  [Service]
-  ExecStart=/usr/local/bin/caddy --agree
-  User=caddy
-  Group=caddy
-  WorkingDirectory=/var/www/caddy
-  LimitNOFILE=8192
-  PIDFile=/var/run/caddy/caddy.pid
-  Restart=on-failure
-  StartLimitInterval=300
-
-  [Install]
-  WantedBy=multi-user.target
-  ```
+3. Escribir archivo de inicio systemd de Caddy en `/etc/systemd/system/caddy.service` - [ejemplo](./config-files/caddy.service)
 
 4. Configurar Caddy en su propio usuario
   ```sh
@@ -118,31 +71,11 @@
   $ yarn --production
   ```
 
-3. Editar la configuración de Ghost en `/var/www/ghost/config.js`
+3. Escribir la configuración de Ghost en `/var/www/ghost/config.js` - [ejemplo](./config-files/config.js)
   Cambiar `config.production.url` de `http://my-ghost-blog.com` a la URL del dominio que toca. **Usa `https://`**, ya que Caddy lo activará por defecto.
   Añadir el nombre de usuario y contraseña de Mailgun para evitar que el email se bloquee (o si no Outlook/Hotmail lo considera spam).
 
-4. Escribir archivo de inicio systemd en `/etc/systemd/system/ghost.service`
-  ```systemd
-  [Unit]
-  Description=Ghost server
-  After=network.target
-
-  [Service]
-  ExecStart=/var/www/ghost/start.sh
-  User=ghost
-  Group=ghost
-  Environment=PATH=/usr/bin:/usr/local/bin
-  Environment=NODE_ENV=production
-  WorkingDirectory=/var/www/ghost
-  LimitNOFILE=8192
-  PIDFile=/var/run/ghost/ghost.pid
-  Restart=on-failure
-  StartLimitInterval=300
-
-  [Install]
-  WantedBy=multi-user.target
-  ```
+4. Escribir archivo de inicio systemd de Ghost en `/etc/systemd/system/ghost.service` - [ejemplo](./config-files/ghost.service)
 
 5. Configurar Ghost en su propio usuario
   ```sh
@@ -162,4 +95,4 @@
   $ reboot
   ```
 
-2. ¡Si todo ha ido bien, ya está todo!
+2. ¡Si todo ha ido bien, ya está activo!
