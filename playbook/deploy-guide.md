@@ -29,7 +29,7 @@
 # Instalar y configurar Caddy
 1. Instalar Caddy y dar permisos para el puerto 80 y 443
   ```sh
-  $ curl -fsSL https://getcaddy.com | bash -s git
+  $ curl https://getcaddy.com | bash -s http.minify
   $ setcap cap_net_bind_service=+ep /usr/local/bin/caddy
   $ mkdir -p /var/www/caddy
   ```
