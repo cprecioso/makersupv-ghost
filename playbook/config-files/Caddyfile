@@ -1,7 +1,6 @@
 https://dominio.com {
 
   gzip
-  minify
   push
   
   tls correodealguien@servidor.com
