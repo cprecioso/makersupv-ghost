@@ -1,8 +1,0 @@
-node_modules/
-content/apps/*
-!content/apps/.gitkeep
-content/data/*
-!content/data/.gitkeep
-content/images/*
-!content/images/.gitkeep
-/config.js
